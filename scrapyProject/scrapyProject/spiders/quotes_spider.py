@@ -1,4 +1,7 @@
 import scrapy
+from scrapy.loader import ItemLoader
+from ..items import QuotesItem
+from ..pipelines import MySQLPipeLine
 
 
 class QuotesSpider(scrapy.Spider):
@@ -15,8 +18,12 @@ class QuotesSpider(scrapy.Spider):
 			
 			
     def parse(self, response):
-        page = response.url.split("/")[-2]
-        filename = 'quotes-%s.html' % page
-        with open(filename, 'wb') as f:
-            f.write(response.body)
-        self.log('Saved file %s' % filename)
+        self.logger.info("This is an item page %s" , response.url)
+        for quote in response.css("div.quote"):
+            item = QuotesItem()
+            item['text'] = quote.css("span.text::text").get()
+            item['author'] = quote.css("small.author::text").get()
+            item['tags'] = quote.css("div.tags a.tag::text").getall()
+            #item['last_upd_time'] = '2020-05-12 19:54:00'
+            print(item)
+            yield item

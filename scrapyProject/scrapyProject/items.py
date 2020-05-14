@@ -7,6 +7,12 @@
 
 import scrapy
 
+class QuotesItem(scrapy.Item):
+    text = scrapy.Field()
+    author = scrapy.Field()
+    tags = scrapy.Field()
+    #last_upd_time = scrapy.Field()
+
 
 class ScrapyprojectItem(scrapy.Item):
     # define the fields for your item here like:

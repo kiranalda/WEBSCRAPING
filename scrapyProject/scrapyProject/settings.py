@@ -14,6 +14,17 @@ BOT_NAME = 'scrapyProject'
 SPIDER_MODULES = ['scrapyProject.spiders']
 NEWSPIDER_MODULE = 'scrapyProject.spiders'
 
+MYSQL_host = '127.0.0.1'
+MYSQL_user = 'root'
+MYSQL_pwd = 'root'
+MYSQL_db = 'web_scraping'
+
+ITEM_PIPELINES = { #000 to 1000
+   'scrapyProject.pipelines.MySQLPipeLine': 000,
+   # 'tutorial.pipelines.CoreymsPipeline' : 600,
+}
+
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapyProject (+http://www.yourdomain.com)'
