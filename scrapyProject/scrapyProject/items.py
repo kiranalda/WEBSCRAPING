@@ -13,6 +13,10 @@ class QuotesItem(scrapy.Item):
     tags = scrapy.Field()
     #last_upd_time = scrapy.Field()
 
+class CoreyMSItem(scrapy.Item):
+    link = scrapy.Field()
+    summary = scrapy.Field()
+
 
 class ScrapyprojectItem(scrapy.Item):
     # define the fields for your item here like:

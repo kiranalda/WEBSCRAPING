@@ -20,8 +20,8 @@ MYSQL_pwd = 'root'
 MYSQL_db = 'web_scraping'
 
 ITEM_PIPELINES = { #000 to 1000
-   'scrapyProject.pipelines.MySQLPipeLine': 000,
-   # 'tutorial.pipelines.CoreymsPipeline' : 600,
+  # 'scrapyProject.pipelines.MySQLPipeLine': 000,
+    'scrapyProject.pipelines.CoreymsPipeline' : 600,
 }
 
 
