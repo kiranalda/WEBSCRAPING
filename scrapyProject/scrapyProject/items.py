@@ -18,6 +18,12 @@ class CoreyMSItem(scrapy.Item):
     summary = scrapy.Field()
 
 
+class TechCrunchItem(scrapy.Item):
+    title = scrapy.Field()
+    pubDate = scrapy.Field()
+    link = scrapy.Field()
+
+
 class ScrapyprojectItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
